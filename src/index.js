@@ -16,7 +16,7 @@ let newProductWindow
 
 //Método para crear una ventana principal y se carga la URL/ruta del archivo
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({})
+    mainWindow = new BrowserWindow({width: 720, height: 600})
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'views/index.html'),
         protocol: 'file',
@@ -76,7 +76,7 @@ const templateMenu = [
             {
                 label: 'Remove All Products',
                 click() {
-
+                  mainWindow.webContents.send('products:remove-all');
                 }
             },
             {
