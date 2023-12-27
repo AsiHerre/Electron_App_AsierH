@@ -1,1 +1,7 @@
-*.exe filter=lfs diff=lfs merge=lfs -text
+# .gitattributes
+
+# Exclude the entire node_modules directory
+node_modules/ -filter=lfs diff=lfs merge=lfs -text
+
+# Specific rule for the executable
+App_Electron.exe filter=lfs diff=lfs merge=lfs -text
