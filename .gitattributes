@@ -1,7 +1,10 @@
 # .gitattributes
 
 # Exclude the entire node_modules directory
-node_modules/ -filter=lfs diff=lfs merge=lfs -text
+node_modules/ -diff -merge
+
+# Track specific patterns with LFS
+node_modules/electron/dist/* filter=lfs diff=lfs merge=lfs -text
 
 # Specific rule for the executable
-App_Electron.exe filter=lfs diff=lfs merge=lfs -text
+node_modules/electron/dist/App_Electron-win32-x64/App_Electron.exe filter=lfs diff=lfs merge=lfs -text
